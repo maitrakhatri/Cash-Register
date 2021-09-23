@@ -34,7 +34,7 @@ function showMessage(message) {
 
 function noOfNotesToReturn(amountLeft) {
 
-    for(i=0; i <= dominationAvailable.length; i++) {
+    for(i=0; i < dominationAvailable.length; i++) {
 
         const noofnotes = Math.trunc(amountLeft/dominationAvailable[i]);
         amountLeft = amountLeft % dominationAvailable[i];
