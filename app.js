@@ -9,10 +9,10 @@ var dominationAvailable = [2000, 500, 100, 20, 10, 5, 1]
 
 checkButton.addEventListener("click", function onClickHandler() {
     errorMessage.style.display = "none";
-    if(billAmount.value >= 0) {
+    if(billAmount.value > 0) {
         if (billAmount.value <= cashGiven.value) {
             var amountLeft = cashGiven.value - billAmount.value;
-            returnAmount.innerText = amountLeft;
+            // returnAmount.innerText = amountLeft;
             noOfNotesToReturn(amountLeft);
         } 
 
