@@ -14,8 +14,9 @@ checkButton.addEventListener("click", function onClickHandler() {
             var amountLeft = cashGiven.value - billAmount.value;
             // returnAmount.innerText = amountLeft;
             noOfNotesToReturn(amountLeft);
+            
         } 
-
+        
         else {
             showMessage("Cash given should be more or equal to the bill amount.");
         }
