@@ -10,15 +10,17 @@ var dominationAvailable = [2000, 500, 100, 20, 10, 5, 1]
 checkButton.addEventListener("click", function onClickHandler() {
     errorMessage.style.display = "none";
     if(billAmount.value > 0) {
-        if (billAmount.value <= cashGiven.value) {
-            var amountLeft = cashGiven.value - billAmount.value;
-            // returnAmount.innerText = amountLeft;
-            noOfNotesToReturn(amountLeft);
+
+        var amountLeft = cashGiven.value - billAmount.value;
+
+        if (amountLeft < 0) {
+            
+            showMessage("Cash given should be more or equal to the bill amount.");
             
         } 
         
-        else {
-            showMessage("Cash given should be more or equal to the bill amount.");
+        if (amountLeft >= 0) {
+            noOfNotesToReturn(amountLeft);
         }
     }
 
