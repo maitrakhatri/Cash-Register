@@ -8,18 +8,17 @@ var numberofnotes = document.querySelectorAll(".no-of-notes")
 var dominationAvailable = [2000, 500, 100, 20, 10, 5, 1]
 
 checkButton.addEventListener("click", function onClickHandler() {
+    
     errorMessage.style.display = "none";
     if(billAmount.value > 0) {
 
         var amountLeft = cashGiven.value - billAmount.value;
-
-        if (amountLeft < 0) {
-            
-            showMessage("Cash given should be more or equal to the bill amount.");
-            
-        } 
         
-        if (amountLeft >= 0) {
+        if (amountLeft < 0) { 
+            showMessage("Cash given should be more or equal to the bill amount."); 
+        } 
+
+        if (amountLeft > 0) {
             noOfNotesToReturn(amountLeft);
         }
     }
@@ -48,14 +47,3 @@ function noOfNotesToReturn(amountLeft) {
 }
 
 
-
-
-
-// function noOfNotesToReturn(amountLeft){
-
-//     for(i=0; i <= dominationAvailable.length; i++) {
-//         dominationAvailable[i] = Math.trunc (amountLeft/dominationAvailable[i]);
-//         console.log(dominationAvailable[i].value)
-//     }
-    
-// }
