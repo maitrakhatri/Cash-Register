@@ -4,8 +4,15 @@ var checkButton = document.querySelector("#check-button")
 var errorMessage = document.querySelector("#error-message")
 var returnAmount = document.querySelector("#reutrn-amount")
 var numberofnotes = document.querySelectorAll(".no-of-notes")
+var cashGivenSection = document.querySelector(".cashgiven")
 
 var dominationAvailable = [2000, 500, 100, 20, 10, 5, 1]
+
+cashGivenSection.style.display = "none";
+
+billAmount.addEventListener("change", function changeHandler() {
+    cashGivenSection.style.display = "block";
+})
 
 checkButton.addEventListener("click", function onClickHandler() {
     
@@ -20,6 +27,10 @@ checkButton.addEventListener("click", function onClickHandler() {
 
         if (amountLeft > 0) {
             noOfNotesToReturn(amountLeft);
+        }
+
+        if (amountLeft = 0) {
+            showMessage("No need to return change");
         }
     }
 
